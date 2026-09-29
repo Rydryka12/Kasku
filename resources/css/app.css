@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-kertas: #F5F6F3;
+        --color-permukaan: #FFFFFF;
+        --color-tinta: #17212B;
+        --color-tinta-redup: #5B6772;
+        --color-garis: #DDE1DC;
+        --color-batik: #2B3A8C;
+        --color-masuk: #0B7A55;
+        --color-keluar: #B93A2B;
+        --color-kunyit: #B7791F;
+    }
+
+    .dark {
+        --color-kertas: #0F1416;
+        --color-permukaan: #171E21;
+        --color-tinta: #E7ECEE;
+        --color-tinta-redup: #93A0A8;
+        --color-garis: #2A3438;
+        --color-batik: #8FA0F2;
+        --color-masuk: #4CC79B;
+        --color-keluar: #F08A7C;
+        --color-kunyit: #E6B450;
+    }
+
+    body {
+        background-color: var(--color-kertas);
+        color: var(--color-tinta);
+        font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    /* Fokus keyboard yang jelas & terlihat (DESIGN 8) */
+    :focus-visible {
+        outline: 2px solid var(--color-batik);
+        outline-offset: 2px;
+    }
+}
+
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Hormati preferensi pengguna untuk reduced-motion (DESIGN 8 & NFR-13) */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,33 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    darkMode: 'class',
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                kertas: 'var(--color-kertas)',
+                permukaan: 'var(--color-permukaan)',
+                tinta: 'var(--color-tinta)',
+                'tinta-redup': 'var(--color-tinta-redup)',
+                garis: 'var(--color-garis)',
+                batik: 'var(--color-batik)',
+                masuk: 'var(--color-masuk)',
+                keluar: 'var(--color-keluar)',
+                kunyit: 'var(--color-kunyit)',
+            },
+        },
+    },
+
+    plugins: [forms],
+};
